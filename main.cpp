@@ -3,6 +3,7 @@
 #include "Creation/SimpleFactory.hpp"
 #include "Creation/FactoryMethod.hpp"
 #include "Creation/Builder.hpp"
+#include "Creation/Singleton.hpp"
 
 #include <iostream>
 
@@ -16,5 +17,7 @@ int main()
 	FactoryMethodTest::test();
 
 	BuilderTest::test();
+
+	SingletonTest::test();
 	return 0;
 }

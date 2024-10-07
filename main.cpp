@@ -1,6 +1,9 @@
 
 #include "Creation/AbstractFactory.hpp"
 #include "Creation/SimpleFactory.hpp"
+#include "Creation/FactoryMethod.hpp"
+#include "Creation/Builder.hpp"
+
 #include <iostream>
 
 int main()
@@ -9,5 +12,9 @@ int main()
 	AbstractFactoryTest::test();
 
 	SimpleFactoryTest::test();
+
+	FactoryMethodTest::test();
+
+	BuilderTest::test();
 	return 0;
 }

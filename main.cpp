@@ -5,6 +5,8 @@
 #include "Creation/Builder.hpp"
 #include "Creation/Singleton.hpp"
 
+#include "Structure/Adaptor.hpp"
+
 #include <iostream>
 
 int main()
@@ -19,5 +21,8 @@ int main()
 	BuilderTest::test();
 
 	SingletonTest::test();
+
+	AdapterTest::test();
+
 	return 0;
 }

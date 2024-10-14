@@ -9,6 +9,7 @@
 #include "Structure/Bridge.hpp"
 #include "Structure/Composite.hpp"
 #include "Structure/Decorator.hpp"
+#include "Structure/Facade.hpp"
 
 #include <iostream>
 
@@ -32,6 +33,8 @@ int main()
 	CompositeTest::test();
 
 	DecoratorTest::test();
+
+	FacadeTest::test();
 
 	return 0;
 }

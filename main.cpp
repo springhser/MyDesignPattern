@@ -6,6 +6,9 @@
 #include "Creation/Singleton.hpp"
 
 #include "Structure/Adaptor.hpp"
+#include "Structure/Bridge.hpp"
+#include "Structure/Composite.hpp"
+#include "Structure/Decorator.hpp"
 
 #include <iostream>
 
@@ -23,6 +26,12 @@ int main()
 	SingletonTest::test();
 
 	AdapterTest::test();
+
+	BridgeTest::test();
+
+	CompositeTest::test();
+
+	DecoratorTest::test();
 
 	return 0;
 }

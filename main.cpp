@@ -10,6 +10,8 @@
 #include "Structure/Composite.hpp"
 #include "Structure/Decorator.hpp"
 #include "Structure/Facade.hpp"
+#include "Structure/Flyweight.hpp"
+#include "Structure/Proxy.hpp"
 
 #include <iostream>
 
@@ -35,6 +37,10 @@ int main()
 	DecoratorTest::test();
 
 	FacadeTest::test();
+
+	FlyweightTest::test();
+
+	ProxyTest::test();
 
 	return 0;
 }

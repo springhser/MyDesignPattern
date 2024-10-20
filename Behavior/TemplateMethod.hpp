@@ -7,20 +7,20 @@ class PathMaker
 public:
 	PathMaker(const std::string& makerName):m_name(makerName){}
 	virtual ~PathMaker(){}
-	virtual void Execute()
+	virtual void execute()
 	{
 		PRINTN("Execute " << m_name << " maker.");
-		Check();
-		Prepare();
-		Calculate();
-		Output();
+		check();
+		prepare();
+		calculate();
+		output();
 		PRINTN("End Process.\n");
 	}
 protected:
-	virtual int Check() = 0;
-	virtual int Prepare() = 0;
-	virtual int Calculate() = 0;
-	virtual int Output() = 0;
+	virtual int check() = 0;
+	virtual int prepare() = 0;
+	virtual int calculate() = 0;
+	virtual int output() = 0;
 
 	const std::string m_name;
 };
@@ -32,23 +32,23 @@ public:
 	virtual ~NearestPathMaker() {}
 
 protected:
-	virtual int Check() override
+	virtual int check() override
 	{
 		PRINTN("Check the " << m_name <<" parameters");
 		return 0;
 	}
 
-	virtual int Prepare() override
+	virtual int prepare() override
 	{
 		PRINTN("Prepare " << m_name << " parameters");
 		return 0;
 	}
-	virtual int Calculate() override
+	virtual int calculate() override
 	{
 		PRINTN("Calculate " << m_name << " ...");
 		return 0;
 	}
-	virtual int Output() override 
+	virtual int output() override 
 	{
 		PRINTN("Output " << m_name << " result.");
 		return 0;
@@ -64,23 +64,23 @@ public:
 
 
 protected:
-	virtual int Check() override
+	virtual int check() override
 	{
 		PRINTN("Dont Check the " << m_name << " parameters");
 		return 0;
 	}
 
-	virtual int Prepare() override
+	virtual int prepare() override
 	{
 		PRINTN("Prepare " << m_name << " parameters");
 		return 0;
 	}
-	virtual int Calculate() override
+	virtual int calculate() override
 	{
 		PRINTN("Calculate " << m_name << " ...");
 		return 0;
 	}
-	virtual int Output() override
+	virtual int output() override
 	{
 		PRINTN("Dont Output " << m_name << " result.");
 		return 0;
@@ -95,9 +95,9 @@ public:
 	{
 		TESTMODULE("Template Method Test");
 		std::shared_ptr<PathMaker> pathMaker = std::make_shared<SmoothPathMaker>();
-		pathMaker->Execute();
+		pathMaker->execute();
 
 		std::shared_ptr<PathMaker> pathMaker2 = std::make_shared<NearestPathMaker>();
-		pathMaker2->Execute();
+		pathMaker2->execute();
 	}
 };

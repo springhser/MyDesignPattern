@@ -15,6 +15,7 @@
 
 #include "Behavior/Strategy.hpp"
 #include "Behavior/TemplateMethod.hpp"
+#include "Behavior/Command.hpp"
 
 #include <iostream>
 
@@ -48,6 +49,8 @@ int main()
 	StrategyTest::test();
 
 	TemplateMethodTest::test();
+
+	CommandTest::test();
 
 	return 0;
 }

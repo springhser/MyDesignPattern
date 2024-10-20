@@ -14,6 +14,7 @@
 #include "Structure/Proxy.hpp"
 
 #include "Behavior/Strategy.hpp"
+#include "Behavior/TemplateMethod.hpp"
 
 #include <iostream>
 
@@ -45,6 +46,8 @@ int main()
 	ProxyTest::test();
 
 	StrategyTest::test();
+
+	TemplateMethodTest::test();
 
 	return 0;
 }

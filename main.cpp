@@ -16,6 +16,7 @@
 #include "Behavior/Strategy.hpp"
 #include "Behavior/TemplateMethod.hpp"
 #include "Behavior/Command.hpp"
+#include "Behavior/ChainOfResposibility.hpp"
 
 #include <iostream>
 
@@ -51,6 +52,8 @@ int main()
 	TemplateMethodTest::test();
 
 	CommandTest::test();
+
+	ChainOfResposibilityTest::test();
 
 	return 0;
 }

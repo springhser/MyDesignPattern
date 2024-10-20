@@ -13,6 +13,8 @@
 #include "Structure/Flyweight.hpp"
 #include "Structure/Proxy.hpp"
 
+#include "Behavior/Strategy.hpp"
+
 #include <iostream>
 
 int main()
@@ -41,6 +43,8 @@ int main()
 	FlyweightTest::test();
 
 	ProxyTest::test();
+
+	StrategyTest::test();
 
 	return 0;
 }

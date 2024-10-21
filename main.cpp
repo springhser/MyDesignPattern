@@ -18,6 +18,7 @@
 #include "Behavior/Command.hpp"
 #include "Behavior/ChainOfResposibility.hpp"
 #include "Behavior/Iterator.hpp"
+#include "Behavior/Mediator.hpp"
 
 #include <iostream>
 
@@ -57,6 +58,8 @@ int main()
 	ChainOfResposibilityTest::test();
 
 	IteratorTest::test();
+
+	MediatorTest::test();
 
 	return 0;
 }

@@ -17,6 +17,7 @@
 #include "Behavior/TemplateMethod.hpp"
 #include "Behavior/Command.hpp"
 #include "Behavior/ChainOfResposibility.hpp"
+#include "Behavior/Iterator.hpp"
 
 #include <iostream>
 
@@ -54,6 +55,8 @@ int main()
 	CommandTest::test();
 
 	ChainOfResposibilityTest::test();
+
+	IteratorTest::test();
 
 	return 0;
 }

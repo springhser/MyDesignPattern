@@ -19,6 +19,7 @@
 #include "Behavior/ChainOfResposibility.hpp"
 #include "Behavior/Iterator.hpp"
 #include "Behavior/Mediator.hpp"
+#include "Behavior/Memento.hpp"
 
 #include <iostream>
 
@@ -60,6 +61,8 @@ int main()
 	IteratorTest::test();
 
 	MediatorTest::test();
+
+	MementoTest::test();
 
 	return 0;
 }

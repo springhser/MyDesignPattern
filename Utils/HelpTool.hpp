@@ -28,6 +28,9 @@
 #include <chrono>
 #include <random>
 #include <vector>
+#include <map>
+#include <string>
+#include <thread>
 
 namespace helptool
 {
@@ -47,6 +50,18 @@ public:
     {
         times_ = times;
     }
+
+    int getTimeStamp()
+    {
+        auto time_tamp = std::chrono::high_resolution_clock::now();
+        return time_tamp.time_since_epoch().count();
+    }
+
+    void sleep(int t)
+    {
+        std::this_thread::sleep_for(std::chrono::seconds(t));
+    }
+
     ~Timer()
     {
         auto duration = std::chrono::duration_cast<T>(std::chrono::high_resolution_clock::now()-m_t);
@@ -105,6 +120,7 @@ public:
         PRINTN("");
     }
 };
+
 }
 
 

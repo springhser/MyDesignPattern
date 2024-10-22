@@ -4,6 +4,7 @@
 #include "Creation/FactoryMethod.hpp"
 #include "Creation/Builder.hpp"
 #include "Creation/Singleton.hpp"
+#include "Creation/Prototype.hpp"
 
 #include "Structure/Adaptor.hpp"
 #include "Structure/Bridge.hpp"
@@ -23,6 +24,7 @@
 #include "Behavior/State.hpp"
 #include "Behavior/Observer.hpp"
 #include "Behavior/Visitor.hpp"
+
 
 #include <iostream>
 
@@ -72,6 +74,8 @@ int main()
 	ObserverTest::test();
 
 	VisitorTest::test();
+
+	PrototypeTest::test();
 
 	return 0;
 }

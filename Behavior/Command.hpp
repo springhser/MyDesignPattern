@@ -10,16 +10,16 @@
 
 #include "Utils/HelpTool.hpp"
 
-class CookChief
+class CookChef
 {
 public:
-	virtual ~CookChief(){}
+	virtual ~CookChef(){}
 };
 
-class ChineseChief :public CookChief
+class ChineseChef :public CookChef
 {
 public:
-	virtual ~ChineseChief(){}
+	virtual ~ChineseChef(){}
 	void cookChuanFood() const
 	{
 		PRINTN("Do Chuan Food");
@@ -35,10 +35,10 @@ public:
 	}
 };
 
-class WestChief :public CookChief
+class WestChef :public CookChef
 {
 public:
-	virtual ~WestChief() {}
+	virtual ~WestChef() {}
 	void cookFrenchFood() const
 	{
 		PRINTN("Do French Food");
@@ -50,7 +50,7 @@ class CookFood
 public:
 	virtual ~CookFood(){}
 
-	virtual void setCookChief(std::shared_ptr<CookChief> chief) = 0;
+	virtual void setCookChef(std::shared_ptr<CookChef> chef) = 0;
 	virtual void execute() const = 0;
 };
 
@@ -59,32 +59,32 @@ class CookChineseFood:public CookFood
 {
 public:
 	virtual ~CookChineseFood(){}
-	virtual void setCookChief(std::shared_ptr<CookChief> chief) override
+	virtual void setCookChef(std::shared_ptr<CookChef> chef) override
 	{
-		auto chineseChief = std::dynamic_pointer_cast<ChineseChief>(chief);
-		if (nullptr == chineseChief)
+		auto chineseChef = std::dynamic_pointer_cast<ChineseChef>(chef);
+		if (nullptr == chineseChef)
 		{
-			PRINTN("Only chinese chief is accepted.");
+			PRINTN("Only chinese chef is accepted.");
 			return;
 		}
-		m_chief = chineseChief;
+		m_chef = chineseChef;
 			
 	}
 	virtual void execute() const override 
 	{
 		PRINTN("This is chinese food: ");
-		if (!m_chief)
+		if (!m_chef)
 		{
-			PRINTN("The chief is gone.");
+			PRINTN("The chef is gone.");
 			return;
 		}
 
-		m_chief->cookChuanFood();
-		m_chief->cookYueFood();
-		m_chief->cookLuFood();
+		m_chef->cookChuanFood();
+		m_chef->cookYueFood();
+		m_chef->cookLuFood();
 	}
 
-	std::shared_ptr<ChineseChief> m_chief;
+	std::shared_ptr<ChineseChef> m_chef;
 };
 
 class CookWestFood:public CookFood
@@ -92,30 +92,30 @@ class CookWestFood:public CookFood
 public:
 	virtual ~CookWestFood(){}
 
-	virtual void setCookChief(std::shared_ptr<CookChief> chief) override
+	virtual void setCookChef(std::shared_ptr<CookChef> chef) override
 	{
-		auto westChief = std::dynamic_pointer_cast<WestChief>(chief);
-		if (nullptr == westChief)
+		auto westChef = std::dynamic_pointer_cast<WestChef>(chef);
+		if (nullptr == westChef)
 		{
-			PRINTN("Only west chief is accepted.");
+			PRINTN("Only west chef is accepted.");
 				return;
 		}
-		m_chief = westChief;
+		m_chef = westChef;
 
 	}
 	virtual void execute() const override
 	{
 		PRINTN("This is chinese food: ");
-		if (!m_chief)
+		if (!m_chef)
 		{
-			PRINTN("The chief is gone.");
+			PRINTN("The chef is gone.");
 			return;
 		}
 
-		m_chief->cookFrenchFood();
+		m_chef->cookFrenchFood();
 	}
 
-	std::shared_ptr<WestChief> m_chief;
+	std::shared_ptr<WestChef> m_chef;
 };
 
 
@@ -148,13 +148,13 @@ public:
 		TESTMODULE("Command Test");
 		PRINTN("The new restaurant has just opened")
 		Restaurant room;
-		auto chief1 = std::make_shared<ChineseChief>();
+		auto chef1 = std::make_shared<ChineseChef>();
 		auto cookFood1 = std::make_shared<CookChineseFood>();
-		cookFood1->setCookChief(chief1);
+		cookFood1->setCookChef(chef1);
 
-		auto chief2 = std::make_shared<WestChief>();
+		auto chef2 = std::make_shared<WestChef>();
 		auto cookFood2 = std::make_shared<CookWestFood>();
-		cookFood2->setCookChief(chief2);
+		cookFood2->setCookChef(chef2);
 
 		room.setFoodStyle(cookFood1);
 		room.setFoodStyle(cookFood2);

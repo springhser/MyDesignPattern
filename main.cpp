@@ -20,6 +20,7 @@
 #include "Behavior/Iterator.hpp"
 #include "Behavior/Mediator.hpp"
 #include "Behavior/Memento.hpp"
+#include "Behavior/State.hpp"
 
 #include <iostream>
 
@@ -63,6 +64,8 @@ int main()
 	MediatorTest::test();
 
 	MementoTest::test();
+
+	StateTest::test();
 
 	return 0;
 }

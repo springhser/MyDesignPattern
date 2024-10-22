@@ -22,6 +22,7 @@
 #include "Behavior/Memento.hpp"
 #include "Behavior/State.hpp"
 #include "Behavior/Observer.hpp"
+#include "Behavior/Visitor.hpp"
 
 #include <iostream>
 
@@ -69,6 +70,8 @@ int main()
 	StateTest::test();
 
 	ObserverTest::test();
+
+	VisitorTest::test();
 
 	return 0;
 }

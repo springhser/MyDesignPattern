@@ -21,6 +21,7 @@
 #include "Behavior/Mediator.hpp"
 #include "Behavior/Memento.hpp"
 #include "Behavior/State.hpp"
+#include "Behavior/Observer.hpp"
 
 #include <iostream>
 
@@ -66,6 +67,8 @@ int main()
 	MementoTest::test();
 
 	StateTest::test();
+
+	ObserverTest::test();
 
 	return 0;
 }
